@@ -1,0 +1,550 @@
+diff -Naur ojs-2.4.5.orig/lib/pkp/styles/common.css ojs-2.4.5/lib/pkp/styles/common.css
+--- ojs-2.4.5.orig/lib/pkp/styles/common.css	2014-09-18 07:47:44.000000000 +0200
++++ ojs-2.4.5/lib/pkp/styles/common.css	2015-08-28 15:35:11.157202988 +0200
+@@ -16,10 +16,15 @@
+ body {
+ 	margin: 0;
+ 	padding: 0;
+-	background-color: #FBFBF3;
+-	color: #111;
+-	font-family: Verdana,Arial,Helvetica,sans-serif;
++	background-color: lightgray;
++/*	background-color: #FBFBF3; */
++	color: #2e2e2e;
++/*	color: #111; */
++        font-family: 'Source Sans Pro',Arial,Helvetica,sans-serif;
++/*	font-family: Verdana,Arial,Helvetica,sans-serif; */
+ 	text-align: center;
++/* custom settings */
++	font-size: 14px;
+ }
+ 
+ div {
+@@ -33,7 +38,7 @@
+ table {
+ 	border: 0;
+ 	border-spacing: 0;
+-	font-size: 1.0em;
++/*	font-size: 1.0em; */
+ }
+ 
+ form {
+@@ -54,7 +59,7 @@
+ }
+ 
+ tt {
+-	font-size: 1.25em;
++/*	font-size: 1.25em; */
+ }
+ 
+ label {
+@@ -67,24 +72,25 @@
+ input.textField, select.selectMenu, textarea.textArea, input.uploadField {
+ 	background-color: #F0F0E8;
+ 	color: #000;
+-	font-family: Verdana,Arial,Helvetica,sans-serif;
++        font-family: 'Source Sans Pro',Arial,Helvetica,sans-serif;
++/*	font-family: Verdana,Arial,Helvetica,sans-serif; */
+ 	border-top: 2px solid #666;
+ 	border-left: 2px solid #666;
+ 	border-bottom: 2px solid #E8E8E1;
+ 	border-right: 2px solid #E8E8E1;
+-	font-size: 1em;
++/*	font-size: 1em; */
+ }
+ 
+ input.button {
+ 	padding-left: 0.5em;
+ 	padding-right: 0.5em;
+ 	background-color: #E8E8E1;
+-	font-size: 1em;
++/*	font-size: 1em; */
+ }
+ 
+ input.defaultButton {
+-	background-color: #375;
+-	color: #FBFBF3;
++/*	background-color: #375; */
++/*	color: #FBFBF3; */
+ 	font-weight: bold;
+ }
+ 
+@@ -101,22 +107,30 @@
+ }
+ 
+ #header {
+-	width: 100%;
++	width: 1080px;
++/*	width: 100%; */
+ 	text-align: center;
++/* custom-properties */
++	margin: 0px auto;
++	background: #fefefe;
+ }
+ 
+ #headerTitle {
+ 	text-align: left !important;
+ 	margin: 0 auto;
+ 	padding: 0;
+-	width: 100%;
++	width: 100%; 
+ }
+ 
+ #header h1 {
+ 	margin: 0 auto;
+-	padding: 0.5em 0 0.25em 10%;
+-	font-family: Georgia,'Times New Roman',Times,serif;
++	padding: 20px 20px 20px 0px; 
++/*	padding: 0.5em 0 0.25em 10%; */
++/*	font-family: Georgia,'Times New Roman',Times,serif; */
+ 	font-weight: normal;
++/* custom properties */
++	font-size: 23px;
++	margin-right: 400px;
+ }
+ 
+ #footer {
+@@ -138,58 +152,86 @@
+ }
+ 
+ #main h2 {
+-	margin: 0em 1em 0.5em 0em;
++	margin: 0; 
++/*	margin: 0em 1em 0.5em 0em; */
+ 	padding-top: 0.5em;
+-	font-family: Georgia,'Times New Roman',Times,serif;
+-	font-weight: normal;
++/*	font-family: Georgia,'Times New Roman',Times,serif; */
++	font-weight: 600;
++/*	font-weight: normal; */
++/* custom properties */
++	font-size: 20px;
++	padding-left: 20px;
++    border-left: 1px solid #dadada;
+ }
+ 
+-#main h3 {
+-	margin: 0em 1em 0.5em 0em;
++#main > h3 {
++	margin: 0; 
++/*	margin: 0em 1em 0.5em 0em; */
+ 	padding-top: 0em;
+-	font-family: Georgia,'Times New Roman',Times,serif;
+-	font-weight: normal;
++/*	font-family: Georgia,'Times New Roman',Times,serif; */
++	font-weight: normal; 
++/* custom properties */
++	font-size: 20px;
++	padding-left: 20px;
++    border-left: 1px solid #dadada;
+ }
+ 
+ #navbar {
+-	margin-right: 0;
+-	padding-bottom: 0.5em;
+-	border-bottom: 2px dotted #000;
++/*	margin-right: 0; */
++/*	padding-bottom: 0.5em; */
++/*	border-bottom: 2px dotted #000; */
++
++/* custom properties */
++	height: 33px;
++	width: 1080px; 
++	background: rgba(85,114,161,0.85);
++	border-radius: 3px;
+ }
+ 
+ #breadcrumb {
+-	padding-top: 1em;
+-	font-size: 0.7em;
++	padding-top: 1em; 
++/*	font-size: 0.7em; */
++/* custom properties */
++	margin-top: 25px;
++	padding-left: 20px;
++    border-top: 1px solid #dadada;
++    border-left: 1px solid #dadada;
+ }
+ 
+ #content {
+ 	margin: 0;
+-	padding: 0;
++	padding: 20px;
++/*	padding: 0; */
+ 	padding-top: 0.5em;
+-	font-size: 0.7em;
+-	border-top: 2px dotted #000;
++/*	font-size: 0.7em; */
++/*	border-top: 2px dotted #000; */
++/* custom-properties */
++        border-left: 1px solid #dadada;
++	min-height: 1000px;
+ }
+ 
+ #content h3 {
+ 	margin: 0em 1em 0.25em 0em;
+ 	padding-top: 0.75em;
+-	font-family: Georgia,'Times New Roman',Times,serif;
+-	font-weight: normal;
+-	font-size: 1.8em;
++/*	font-family: Georgia,'Times New Roman',Times,serif; */
++	font-weight: 600;
++/*	font-weight: normal; */
++    font-size: 20px;
++/*	font-size: 1.8em; */
+ }
+ 
+ #content h4 {
+ 	margin: .75em 1em 0.25em 0em;
+-	font-family: Georgia,'Times New Roman',Times,serif;
++/*	font-family: Georgia,'Times New Roman',Times,serif; */
+ 	font-weight: normal;
+-	font-size: 1.5em;
++/*	font-size: 1.5em; */
+ }
+ 
+ #content h5 {
+ 	margin: 0em 1em 0.25em 0em;
+ 	padding-top: 0.75em;
+ 	font-weight: bold;
+-	font-size: 1em;
++/*	font-size: 1em; */
+ }
+ 
+ 
+@@ -211,7 +253,7 @@
+  */
+ 
+ #footer div.debugStats {
+-	font-size: 0.6em;
++/*	font-size: 0.6em; */
+ }
+ 
+ 
+@@ -224,8 +266,8 @@
+ }
+ 
+ a.action, a.file {
+-	font-size: 0.85em;
+-	text-transform: uppercase;
++/*	font-size: 0.85em; */
++/*	text-transform: uppercase; */
+ }
+ 
+ a.icon {
+@@ -242,11 +284,11 @@
+ 
+ span.formRequired {
+ 	color: #333;
+-	font-size: 0.9em;
++/*	font-size: 0.9em; */
+ }
+ 
+ span.heading {
+-	font-size: 0.85em;
++/*	font-size: 0.85em; */
+ 	text-transform: uppercase;
+ }
+ 
+@@ -279,8 +321,8 @@
+ }
+ 
+ table.listing tr.heading td, table.listing td.heading, table.info td.heading {
+-	font-size: 0.85em;
+-	text-transform: uppercase;
++/*	font-size: 0.85em; */
++/*	text-transform: uppercase; */
+ 	font-weight: normal;
+ 	padding: 0.75em 1.5em 1em 0.5em;
+ }
+@@ -345,7 +387,7 @@
+ 
+ span.nested {
+ 	padding: 0 4px 0 0;
+-	font-size: 1.2em;
++/*	font-size: 1.2em; */
+ }
+ 
+ /**
+@@ -355,13 +397,13 @@
+ span.pkp_form_error { /* Named for compatibility with new lessphp structure */
+ 	color: #900;
+ 	font-weight: bold;
+-	font-size: 1em;
++/*	font-size: 1em; */
+ }
+ 
+ span.pkp_form_success { /* Named for compatibility with new lessphp structure */
+ 	color: #090;
+ 	font-weight: bold;
+-	font-size: 1em;
++/*	font-size: 1em; */
+ }
+ 
+ ul.pkp_form_error_list { /* Named for compatibility with new lessphp structure */
+@@ -376,13 +418,16 @@
+ ul.menu {
+ 	margin: 0;
+ 	padding: 0;
++/* custom properties */
++	padding-top: 7px;
+ }
+ 
+ ul.menu li {
+ 	margin: 0;
+-	padding: 0;
+-	padding-right: 1.5em;
++/*	padding: 0; */
++/*	padding-right: 1.5em; */
+ 	display: inline;
++/* custom properties */
+ }
+ 
+ ul.menu li.current {
+@@ -390,9 +435,12 @@
+ }
+ 
+ ul.menu a {
+-	font-size: 0.85em;
+-	text-transform: uppercase;
++/*	font-size: 0.85em; */
++/*	text-transform: uppercase; */
+ 	text-decoration: none;
++/* custom properties */
++	padding-left: 20px; 
++	font-weight: 600;
+ }
+ 
+ ul.steplist {
+@@ -404,7 +452,7 @@
+ ul.steplist li {
+ 	margin: 0;
+ 	padding: 0;
+-	font-size: 0.85em;
++/*	font-size: 0.85em; */
+ 	padding-right: 0.5em;
+ 	display: inline;
+ 	text-transform: uppercase;
+diff -Naur ojs-2.4.5.orig/lib/pkp/templates/common/header.tpl ojs-2.4.5/lib/pkp/templates/common/header.tpl
+--- ojs-2.4.5.orig/lib/pkp/templates/common/header.tpl	2014-09-18 07:47:44.000000000 +0200
++++ ojs-2.4.5/lib/pkp/templates/common/header.tpl	2015-08-28 15:35:11.157202988 +0200
+@@ -31,6 +31,10 @@
+ 	<link rel="stylesheet" href="{$baseUrl}/styles/common.css" type="text/css" />
+ 	<link rel="stylesheet" href="{$baseUrl}/styles/compiled.css" type="text/css" />
+ 
++        <!-- Custom Source Sans font -->
++    	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,400italic,600italic' rel='stylesheet' type='text/css' />
++ 
++
+ 	<!-- Base Jquery -->
+ 	{if $allowCDN}<script type="text/javascript" src="//www.google.com/jsapi"></script>
+ 		<script type="text/javascript">{literal}
+diff -Naur ojs-2.4.5.orig/styles/common.css ojs-2.4.5/styles/common.css
+--- ojs-2.4.5.orig/styles/common.css	2014-09-18 07:47:36.000000000 +0200
++++ ojs-2.4.5/styles/common.css	2015-08-28 15:35:11.157202988 +0200
+@@ -33,20 +33,24 @@
+  */
+ 
+ a:link {
+-	color: #375;
++	color: #37588e;
++/*	color: #375; */
+ }
+ 
+ a:active {
+-	color: #253;
++	color: #37588e;
++/*	color: #253; */
+ }
+ 
+ a:visited {
+-	color: #375;
++	color: #37588e;
++/*	color: #375; */
+ }
+ 
+ a:hover {
+-	color: #253;
+-	background: #CDC;
++	color: #5283d2;
++/*	color: #253; */
++/*	background: #CDC; */
+ }
+ 
+ 
+@@ -55,11 +59,11 @@
+  */
+ 
+ #header {
+-	background-color: #ABA;
++/*	background-color: #ABA; */
+ }
+ 
+ #footer {
+-	background-color: #ABA;
++/*	background-color: #ABA; */
+ }
+ 
+ #main {
+@@ -91,10 +95,15 @@
+ /**
+  * Navigation bar
+  */
+-
+ #navbar a {
+-	font-size: 0.65em;
+-	letter-spacing: 0.05em;
++/*	font-size: 0.65em; */
++/*	letter-spacing: 0.05em; */
++/* custom settings */
++	color: rgba(255, 255, 255, 0.7);
++}
++/* custom properties */
++#navbar a:hover {
++	color: rgba(255, 255, 255, 1.0);
+ }
+ 
+ 
+@@ -231,7 +240,7 @@
+ 	padding-left: 10px;
+ }
+ .tocAuthors {
+-	padding-left: 10px;
++/*	padding-left: 10px; */
+ }
+ 
+ .tocArticleGalleysPages {
+diff -Naur ojs-2.4.5.orig/styles/common_ojs_background.png ojs-2.4.5/styles/common_ojs_background.png
+--- ojs-2.4.5.orig/styles/common_ojs_background.png	1970-01-01 01:00:00.000000000 +0100
++++ ojs-2.4.5/styles/common_ojs_background.png	2015-08-28 15:35:11.157202988 +0200
+@@ -0,0 +1,3 @@
++âPNG
++
++   IHDR   à  Ù   Ê-e\   bKGD ˛ ˛ ˛Î‘Ç   	pHYs  ƒ  ƒï+   tIMEﬁ:“=Ï'   tEXtComment Created with GIMPWÅ  ‰IDATx⁄Ì‹1Ñ0E¡Ä∏ˇëcÍ	QÄ=sÙ‰m±€ú3\ÿ}Ç@A Å A Å Ç@Å Ç@A Ç@A Å A Å Ç@Å Ç@A ÅÄ@A Å Ç@@ Å Ç@A  Ç@A Å A Å Ç@@ Å Ç@A  Ç@A Å A Å Ç@Å Ç@A Ç@A Å A Å Ç@Å Ç@A ÅÄ@A Å Ç@@ Å Ç@A  Ç@A ÅÄ@A Å Ç@@ Å Ç@A  Ç@A Å A Å Ç@Å Ç@A Ç@A Å A ºÍà_Ñád∏ §„`bH≈A ò\Í\øÉêOåoÄâ¡#Å`bpA®sA¸B>1æ&èT\Çâ¡°ŒÒ;˘ƒ¯ò<RqA&Ñ:ƒÔ ‰„`b01òLüª &èT<R11òL..x§bb01òL&èT01òL&ÉÇÇG*&L&Éâ¡¡Éâ¡oL&oL&o01ò\ºA01ò\\<R¡ƒ`b01òL..©ò01òL&√?&∆¡¡#èTL&Éâ°Àƒ∏ ∏ x§‚ëäâ¡ƒ`b01tôèT<R11òL&Ü.„Ç‡Ç‡ëäG*&èT\ÇâÅ`bpApApA&Çâ¡¡¡A ò\&Å`bpA&\\\Çâ¡A ò\X/àZ&üﬂ ÉG*.©x§bb01ò01‹]ÉÇG*©òL&CóbbpAH≈#Éâ¡ƒ`bËrAL.©x§bb01òL&L&Å Ç@A  Ç@A Å A Å Ç@Å Ç@A Ç@A Å A Å Ç@(ÏYZ˘Ô£Õú    IENDÆB`Ç
+\ No newline at end of file
+diff -Naur ojs-2.4.5.orig/styles/rightSidebar.css ojs-2.4.5/styles/rightSidebar.css
+--- ojs-2.4.5.orig/styles/rightSidebar.css	2014-09-18 07:47:36.000000000 +0200
++++ ojs-2.4.5/styles/rightSidebar.css	2015-08-28 15:35:11.157202988 +0200
+@@ -17,28 +17,47 @@
+ #headerTitle {
+ 	text-align: center;
+ 	width: 100%;
++/* custom properties */
++	padding-top: 30px;
+ }
+ 
+ #body {
+-	width: 100%;
++	width: 1080px;
++/*	width: 100%; */
++/* custom properties */
++	margin: 0 auto;
+ }
+ 
+ #rightSidebar {
+-	float: right;
+-	width: 14%;
+-	padding: 1em 0em 1em 0em;
+-	font-size: 0.65em;
++	float: right; 
++	width: 310px; /* 310 - 1 because of left border */
++/*	width: 14%; */
++/*	padding: 1em 0em 1em 0em; */
++/*	font-size: 0.65em; */
+ 	height: 100%;
+-	margin-right: 10%;
+-	margin-left: 2%;
++/*	margin-right: 10%; */
++/*	margin-left: 2%; */
++/* custom properties */
++	background: #fefefe;
++	padding-top: 65px;
+ }
+ 
+ * html #rightSidebar { margin-right: 5%; }
+ 
+ #main {
+ 	float: left;
+-	width: 63%;
+-	margin-left: 10%;
+-	display: inline;
+-	overflow: hidden;
++	width: 770px;
++/*	width: 63%; */
++/*	margin-left: 10%; */ 
++	display: inline; 
++/*	overflow: hidden; */
++/* custom properties */
++	background: #fefefe;
++	min-height: 800px;
++}
++
++/* custom properties */
++body {
++	background-image: url('common_ojs_background.png'); 
++	background-repeat: repeat-x; 
+ }
+diff -Naur ojs-2.4.5.orig/styles/sidebar.css ojs-2.4.5/styles/sidebar.css
+--- ojs-2.4.5.orig/styles/sidebar.css	2014-09-18 07:47:36.000000000 +0200
++++ ojs-2.4.5/styles/sidebar.css	2015-08-28 15:35:11.157202988 +0200
+@@ -14,21 +14,27 @@
+  */
+ 
+ #developedBy {
+-	text-transform: uppercase;
+-	font-size: 0.95em;
++/*	text-transform: uppercase; */
++/*	font-size: 0.95em; */
+ }
+ 
+ #sidebar div.block {
+ 	font-size: 1em;
+-	padding-bottom: 1.5em;
++/*	padding-bottom: 1.5em; */
++/* custom properties */
++	background: #f6f6f6;
++	padding: 15px;
++	border-top: 1px solid #dadada;
++	border-right: 1px solid #dadada;
++	border-left: 1px solid #dadada;
+ }
+ 
+ #sidebar div.block span.blockTitle {
+ 	display: block;
+-	padding: 0.5em 0 0.5em 0;
+-	font-size: 1em;
+-	letter-spacing: 0.1em;
+-	text-transform: uppercase;
++	padding: 0.5em 0 0.5em 0; 
++/*	font-size: 1em; */
++/*	letter-spacing: 0.1em; */
++/*	text-transform: uppercase; */
+ }
+ 
+ #sidebar div.block span.blockSubtitle {
+@@ -38,5 +44,13 @@
+ 
+ #sidebar input.textField, #sidebar select.selectMenu, #sidebar input.button {
+ 	font-size: 1em;
++/* custom properties */
++	font-family: 'Source Sans Pro',Arial,Helvetica,sans-serif;
+ }
+ 
++/* custom properties */
++#sidebar ul, 
++#side li {
++	padding: 0; 
++	list-style: none; 
++}
+diff -Naur ojs-2.4.5.orig/templates/article/dublincore.tpl ojs-2.4.5/templates/article/dublincore.tpl
+--- ojs-2.4.5.orig/templates/article/dublincore.tpl	2014-09-18 07:47:36.000000000 +0200
++++ ojs-2.4.5/templates/article/dublincore.tpl	2015-08-28 15:35:11.157202988 +0200
+@@ -94,3 +94,8 @@
+ 	<meta name="DC.Type" content="Text.Serial.Journal"/>
+ 	<meta name="DC.Type.articleType" content="{$article->getSectionTitle()|strip_tags|escape}"/>
+ 
++    <!-- Custom Source Sans font -->
++    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,400italic,600italic' rel='stylesheet' type='text/css' />
++
++
++
