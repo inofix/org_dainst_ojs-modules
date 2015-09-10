@@ -16,6 +16,10 @@ changes in the theme might all be collected in one patch, while the
 addition of a separate URL for the PDFs in RSS/atom might be better
 separated in a distinct patch..
 
+In case one patch should depend on another one, please put a file
+called DEPENDENCIES into the subfolder and specify the name of the
+patch(es) to be applied first.
+
 
 = How? =
 
