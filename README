@@ -1,0 +1,45 @@
+This is a collection of patches for our OJS service at the DAI.
+
+
+= Why? =
+
+As it is a PHP project and the changes will probably not be to many,
+and especially mostly for adopting OJS to the customers needs, without
+major impact for the community, it seems the easiest solution to run
+diff and patch..
+
+If we should see a possibility to commit something to upstream here,
+a patch would anyway not be the most stupid format..
+
+It is suggested to use a separate diff for each task or scope, i.e. the 
+changes in the theme might all be collected in one patch, while the
+addition of a separate URL for the PDFs in RSS/atom might be better
+separated in a distinct patch..
+
+
+= How? =
+
+Download the original OJS (e.g. ojs-2.4.5) you need to patch to your
+local directory (here calles `parentdir`) unpack it twice or copy it
+with `cp -a` so you get two identical copies, e.g. `ojs-2.4.5.orig and
+ojs-2.4.5.new`.
+
+Apply then all the other patches needed here to the second copy, so
+that the later changes will not contain already mapped fixes (see
+below).
+
+Now you can alter the second copy to your wishes.
+
+For the creation of the patch, start `diff` from the parent directory
+and do not care how it is actually called, issue the command something
+like so:
+
+me@home:parentdir$ diff -Naur ojs-2.4.5.orig ojs-2.4.5.new
+
+Later for applying the patch on the server suite, we will ignore
+the top directory and apply the patch like this:
+
+nighthorse08:ojs# patch -p1 < /home/me/ojs-2.4.X-org_dainst-theme.patch
+
+All done. Congrats! Please remember to let the remote git repo know
+of your labour.. ;)
