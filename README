@@ -9,9 +9,10 @@ major impact for the community, it seems the easiest solution to run
 diff and patch..
 
 If we should see a possibility to commit something to upstream here,
-a patch would anyway not be the most stupid format..
+a patch would anyway not be the most stupid format (upstream uses
+those too btw.)..
 
-It is suggested to use a separate diff for each task or scope, i.e. the 
+It is suggested to use separate diffs for each task or scope, i.e. the 
 changes in the theme might all be collected in one patch, while the
 addition of a separate URL for the PDFs in RSS/atom might be better
 separated in a distinct patch..
@@ -47,3 +48,9 @@ nighthorse08:ojs# patch -p1 < /home/me/ojs-2.4.X-org_dainst-theme.patch
 
 All done. Congrats! Please remember to let the remote git repo know
 of your labour.. ;)
+
+
+= What?! =
+
+Read the friendly manual.
+
