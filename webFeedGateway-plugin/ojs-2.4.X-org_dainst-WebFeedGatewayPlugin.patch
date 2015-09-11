@@ -1,0 +1,26 @@
+diff -Naur a/plugins/generic/webFeed/templates/atom.tpl b/plugins/generic/webFeed/templates/atom.tpl
+--- a/plugins/generic/webFeed/templates/atom.tpl	2015-08-28 18:09:59.889889126 +0200
++++ b/plugins/generic/webFeed/templates/atom.tpl	2015-09-11 23:41:34.520202132 +0200
+@@ -78,6 +78,9 @@
+ 				{/if}
+ 
+ 				{* optional elements *}
++                {foreach from=$article->getGalleys() item=galley}
++                    <dai-file>{url page="article" op="download" path=$article->getBestArticleId($currentJournal)}{"/"}{$galley->getId()}</dai-file>
++                {/foreach}{* galleys *}
+ 				{* <category/> *}
+ 				{* <contributor/> *}
+ 
+diff -Naur a/plugins/generic/webFeed/templates/rss2.tpl b/plugins/generic/webFeed/templates/rss2.tpl
+--- a/plugins/generic/webFeed/templates/rss2.tpl	2015-08-28 18:09:59.889889126 +0200
++++ b/plugins/generic/webFeed/templates/rss2.tpl	2015-09-11 23:36:37.477285635 +0200
+@@ -75,6 +75,9 @@
+ 					{else}
+ 						<cc:license></cc:license>
+ 					{/if}
++                    {foreach from=$article->getGalleys() item=galley}
++                        <dai-file>{url page="article" op="download" path=$article->getBestArticleId($currentJournal)}{"/"}{$galley->getId()}</dai-file>
++                    {/foreach}{* galleys *}
+ 					<guid isPermaLink="true">{url page="article" op="view" path=$article->getBestArticleId($currentJournal)}</guid>
+ 					{if $article->getDatePublished()}
+ 						<pubDate>{$article->getDatePublished()|date_format:"%a, %d %b %Y %T %z"}</pubDate>
