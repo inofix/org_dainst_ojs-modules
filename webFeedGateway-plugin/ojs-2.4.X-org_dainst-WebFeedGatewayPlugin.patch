@@ -13,14 +13,16 @@ diff -Naur a/plugins/generic/webFeed/templates/atom.tpl b/plugins/generic/webFee
  
 diff -Naur a/plugins/generic/webFeed/templates/rss2.tpl b/plugins/generic/webFeed/templates/rss2.tpl
 --- a/plugins/generic/webFeed/templates/rss2.tpl	2015-08-28 18:09:59.889889126 +0200
-+++ b/plugins/generic/webFeed/templates/rss2.tpl	2015-09-11 23:36:37.477285635 +0200
-@@ -75,6 +75,9 @@
- 					{else}
- 						<cc:license></cc:license>
- 					{/if}
++++ b/plugins/generic/webFeed/templates/rss2.tpl	2015-09-12 00:17:30.836454681 +0200
+@@ -62,6 +62,11 @@
+ 
+ 					{* optional elements *}
+ 					<author>{$article->getAuthorString()|escape:"html"}</author>
++
 +                    {foreach from=$article->getGalleys() item=galley}
-+                        <dai-file>{url page="article" op="download" path=$article->getBestArticleId($currentJournal)}{"/"}{$galley->getId()}</dai-file>
++
++                                        <dai-file>{url page="article" op="download" path=$article->getBestArticleId($currentJournal)}{"/"}{$galley->getId()}</dai-file>
 +                    {/foreach}{* galleys *}
- 					<guid isPermaLink="true">{url page="article" op="view" path=$article->getBestArticleId($currentJournal)}</guid>
- 					{if $article->getDatePublished()}
- 						<pubDate>{$article->getDatePublished()|date_format:"%a, %d %b %Y %T %z"}</pubDate>
+ 					{* <category/> *}
+ 					{* <comments/> *}
+ 					{* <source/> *}
