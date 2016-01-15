@@ -3,8 +3,8 @@ This is a collection of patches for our OJS service at the DAI.
 
 = Why? =
 
-As it is a PHP project and the changes will probably not be to many,
-and especially mostly for adopting OJS to the customers needs, without
+As it is a PHP project and the changes will probably not be to many -
+mostly for adopting OJS to the customers needs, and without
 major impact for the community, it seems the easiest solution to run
 diff and patch..
 
@@ -25,18 +25,18 @@ patch(es) to be applied first.
 = How? =
 
 Download the original OJS (e.g. ojs-2.4.5) you need to patch to your
-local directory (here calles `parentdir`) unpack it twice or copy it
+local directory (here called `parentdir) unpack it twice or copy it
 with `cp -a` so you get two identical copies, e.g. `ojs-2.4.5.orig and
 ojs-2.4.5.new`.
 
-Apply then all the other patches needed here to the second copy, so
+Apply then all the other patches needed to the second copy, so
 that the later changes will not contain already mapped fixes (see
 below).
 
 Now you can alter the second copy to your wishes.
 
 For the creation of the patch, start `diff` from the parent directory
-and do not care how it is actually called, issue the command something
+and do not care how that is actually called, issue the command something
 like so:
 
 me@home:parentdir$ diff -Naur ojs-2.4.5.orig ojs-2.4.5.new
