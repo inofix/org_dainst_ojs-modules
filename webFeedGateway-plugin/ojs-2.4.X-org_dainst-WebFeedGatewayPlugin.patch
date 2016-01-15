@@ -1,27 +1,49 @@
 diff -Naur a/plugins/generic/webFeed/templates/atom.tpl b/plugins/generic/webFeed/templates/atom.tpl
---- a/plugins/generic/webFeed/templates/atom.tpl	2015-08-28 18:09:59.889889126 +0200
-+++ b/plugins/generic/webFeed/templates/atom.tpl	2015-09-11 23:41:34.520202132 +0200
-@@ -78,6 +78,9 @@
+--- a/plugins/generic/webFeed/templates/atom.tpl	2015-03-17 23:31:27.000000000 +0100
++++ b/plugins/generic/webFeed/templates/atom.tpl	2016-01-15 18:01:39.993313411 +0100
+@@ -14,6 +14,10 @@
+ 	<id>{url page="issue" op="feed"}</id>
+ 	<title>{$journal->getLocalizedTitle()|strip|escape:"html"}</title>
+ 
++    {* TODO: find out why $journal->getLocalizedSetting('homepageImage') *}
++    {*       is nothing but an empty array, and remove hardcoded part..  *}
++    <dai-journal-cover-image>{$publicFilesDir}/homepageImage_{$currentLocale}.png</dai-journal-cover-image>
++
+ 	{* Figure out feed updated date *}
+ 	{assign var=latestDate value=$issue->getDatePublished()}
+ 	{foreach name=sections from=$publishedArticles item=section}
+@@ -78,6 +82,9 @@
  				{/if}
  
  				{* optional elements *}
 +                {foreach from=$article->getGalleys() item=galley}
-+                    <dai-file>{url page="article" op="download" path=$article->getBestArticleId($currentJournal)}{"/"}{$galley->getId()}</dai-file>
++                    <dai-article-file>{url page="article" op="download" path=$article->getBestArticleId($currentJournal)}{"/"}{$galley->getId()}</dai-file>
 +                {/foreach}{* galleys *}
  				{* <category/> *}
  				{* <contributor/> *}
  
 diff -Naur a/plugins/generic/webFeed/templates/rss2.tpl b/plugins/generic/webFeed/templates/rss2.tpl
---- a/plugins/generic/webFeed/templates/rss2.tpl	2015-08-28 18:09:59.889889126 +0200
-+++ b/plugins/generic/webFeed/templates/rss2.tpl	2015-09-12 00:17:30.836454681 +0200
-@@ -62,6 +62,11 @@
+--- a/plugins/generic/webFeed/templates/rss2.tpl	2015-03-17 23:31:27.000000000 +0100
++++ b/plugins/generic/webFeed/templates/rss2.tpl	2016-01-15 18:01:39.993313411 +0100
+@@ -15,6 +15,10 @@
+ 		<title>{$journal->getLocalizedTitle()|strip|escape:"html"}</title>
+ 		<link>{$journal->getUrl()|escape}</link>
+ 
++        {* TODO: find out why $journal->getLocalizedSetting('homepageImage') *}
++        {*       is nothing but an empty array, and remove hardcoded part..  *}
++        <dai-journal-cover-image>{$publicFilesDir}/homepageImage_{$currentLocale}.png</dai-journal-cover-image>
++
+ 		{if $journal->getLocalizedDescription()}
+ 			{assign var="description" value=$journal->getLocalizedDescription()}
+ 		{elseif $journal->getLocalizedSetting('searchDescription')}
+@@ -62,6 +66,11 @@
  
  					{* optional elements *}
  					<author>{$article->getAuthorString()|escape:"html"}</author>
 +
 +                    {foreach from=$article->getGalleys() item=galley}
 +
-+                                        <dai-file>{url page="article" op="download" path=$article->getBestArticleId($currentJournal)}{"/"}{$galley->getId()}</dai-file>
++                                        <dai-article-file>{url page="article" op="download" path=$article->getBestArticleId($currentJournal)}{"/"}{$galley->getId()}</dai-file>
 +                    {/foreach}{* galleys *}
  					{* <category/> *}
  					{* <comments/> *}
