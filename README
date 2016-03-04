@@ -1,9 +1,11 @@
-This is a collection of patches for our OJS service at the DAI.
+This is a collection of patches and plugins for our OJS service at the DAI.
 
 
 = Why? =
 
-As it is a PHP project and the changes will probably not be to many -
+We love diff/patch.
+
+As it is a PHP project and the changes will probably not be too many -
 mostly for adopting OJS to the customers needs, and without
 major impact for the community, it seems the easiest solution to run
 diff and patch..
@@ -21,17 +23,22 @@ In case one patch should depend on another one, please put a file
 called DEPENDENCIES into the subfolder and specify the name of the
 patch(es) to be applied first.
 
+Whole plugins (inside the plugins dir) are just added as dirs and files.
+
 
 = How? =
 
 Download the original OJS (e.g. ojs-2.4.5) you need to patch to your
-local directory (here called `parentdir) unpack it twice or copy it
-with `cp -a` so you get two identical copies, e.g. `ojs-2.4.5.orig and
+local directory (here called `parentdir) and unpack it twice
+so you get two identical copies, e.g. `ojs-2.4.5.orig and
 ojs-2.4.5.new`.
 
-Apply then all the other patches needed to the second copy, so
-that the later changes will not contain already mapped fixes (see
-below).
+Apply then all the other patches needed to both copies, so
+that the later changes will not contain already mapped fixes.
+
+(Obviously you might also decide to unpack the archive only once,
+apply the patches first to the unpacked archive and copy it with
+e.g. `cp -a` only then, in order to achieve the same result..)
 
 Now you can alter the second copy to your wishes.
 
@@ -39,12 +46,16 @@ For the creation of the patch, start `diff` from the parent directory
 and do not care how that is actually called, issue the command something
 like so:
 
+{{{
 me@home:parentdir$ diff -Naur ojs-2.4.5.orig ojs-2.4.5.new
+}}}
 
 Later for applying the patch on the server suite, we will ignore
 the top directory and apply the patch like this:
 
+{{{
 nighthorse08:ojs# patch -p1 < /home/me/ojs-2.4.X-org_dainst-theme.patch
+}}}
 
 All done. Congrats! Please remember to let the remote git repo know
 of your labour.. ;)
