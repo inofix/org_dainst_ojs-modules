@@ -54,7 +54,7 @@ Later for applying the patch on the server suite, we will ignore
 the top directory and apply the patch like this:
 
 {{{
-nighthorse08:ojs# patch -p1 < /home/me/ojs-2.4.X-org_dainst-theme.patch
+server:ojs# patch -p1 < /home/me/ojs-2.4.X-org_dainst-theme.patch
 }}}
 
 All done. Congrats! Please remember to let the remote git repo know
