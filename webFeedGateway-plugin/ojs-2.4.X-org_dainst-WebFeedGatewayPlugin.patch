@@ -17,7 +17,7 @@ diff -Naur a/plugins/generic/webFeed/templates/atom.tpl b/plugins/generic/webFee
  
  				{* optional elements *}
 +                {foreach from=$article->getGalleys() item=galley}
-+                    <dai-article-file>{url page="article" op="download" path=$article->getBestArticleId($currentJournal)}{"/"}{$galley->getId()}</dai-file>
++                    <dai-article-file>{url page="article" op="download" path=$article->getBestArticleId($currentJournal)}{"/"}{$galley->getId()}</dai-article-file>
 +                {/foreach}{* galleys *}
  				{* <category/> *}
  				{* <contributor/> *}
@@ -43,7 +43,7 @@ diff -Naur a/plugins/generic/webFeed/templates/rss2.tpl b/plugins/generic/webFee
 +
 +                    {foreach from=$article->getGalleys() item=galley}
 +
-+                                        <dai-article-file>{url page="article" op="download" path=$article->getBestArticleId($currentJournal)}{"/"}{$galley->getId()}</dai-file>
++                                        <dai-article-file>{url page="article" op="download" path=$article->getBestArticleId($currentJournal)}{"/"}{$galley->getId()}</dai-article-file>
 +                    {/foreach}{* galleys *}
  					{* <category/> *}
  					{* <comments/> *}
